@@ -1,0 +1,17 @@
+<html>
+<head>
+{{ content_for_header }}
+{{ 'styles.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+
+{% render 'header' %} 
+<main>
+    {{ content_for_layout }}
+</main>
+
+{% render 'footer' %}  
+
+{{ 'scripts.js' | asset_url | script_tag }}
+</body>
+</html>

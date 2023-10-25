@@ -1,0 +1,67 @@
+/* background-image: url("{{ 'board_.jpg' | asset_url }}") */
+html,*{
+    box-content:border-box;
+    padding:0;
+    margin:0;
+    
+}
+body{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:center;
+    min-height: 80vh;
+    
+}
+main .list{
+    display: flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+}
+
+header ul{
+    display: flex;
+    gap:40px;
+    list-style-type:none;
+}
+header,footer{
+    height: 10vh;
+    background-color: #f1f2f3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+a{
+    text-decoration:none;
+}
+
+.product-card{
+    display: flex;
+    flex-direction:column;
+}
+.cart-product{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.cart-product-list{
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    gap:1rem;
+
+}

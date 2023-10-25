@@ -1,0 +1,9 @@
+<footer>
+    <h3>{{shop.name}}</h3>
+    <!-- Main menu -->
+<ul class="footer-links">
+    {% for link in linklists.main-menu.links -%}
+        <li>{{ link.title | link_to: link.url }}</li>
+    {%- endfor %}
+    </ul>
+</footer>

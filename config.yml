@@ -1,0 +1,6 @@
+# theme configure -s codewithzoran.myshopify.com -t 137383313656 -p shptka_460a0461fb601013344a139020a2e728
+development:
+  password: shptka_460a0461fb601013344a139020a2e728
+  theme_id: '137383313656'
+  store: codewithzoran.myshopify.com
+#theme watch --alow-live
