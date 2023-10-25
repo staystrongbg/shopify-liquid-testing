@@ -1,29 +1,33 @@
 <h1>{{ article.title }}</h1>
-<h3>{{ article.author }}</h3>
-<h3>{{ article.published_at | date: '%B %d, %Y'}}</h3>
-<p>{{ article.content }}</p>
+<div class="post-header">
+    <p>author: {{ article.author }}</p>
+    <p>date published: {{ article.published_at | date: '%B %d, %Y'}}</p>
+</div>
+<div class="post-text">
+    <img src={{ article.image | image_url: width: 200  }} alt="">
+    <p class="">{{ article.content }}</p>
+</div>
 
 {% if article.comments_enabled? %}
-    <h3> please leave a comment</h3>
-
+    
     {% for comment in article.comments %}
-        <p>{{ comment.author }} {{ comment.created_at |  date: '%B %d, %Y'  }}</p>
-        <p>{{ comment.content }}</p>
-    {% endfor %}
-
+        <div class="comment-container">
+            <p>{{ comment.author }} {{ comment.created_at |  date: '%B %d, %Y'  }}</p>
+            <p>{{ comment.content }}</p>
+            </div>
+        {% endfor %}
+        
+        <h3> please leave a comment</h3>
     {% form 'new_comment',article %}
     {{ form.errors | default_errors }}
     <div>
-        <label for="name">name</label>
-        <input type="text" name="comment[author]" value={{ comment.author }}>
+        <input type="text" name="comment[author]" placeholder="author" value={{ comment.author }}>
     </div>    
     <div>
-        <label for="email">email</label>
-        <input type="email" name="comment[email]" value={{ comment.email }}>
+        <input type="email" name="comment[email]" placeholder="email" value={{ comment.email }}>
     </div>    
     <div>
-        <label for="comment">comment</label>
-        <textarea type="text" name="comment[body]" value={{ form.body }}></textarea>
+        <textarea type="text" name="comment[body]" placeholder="body" value={{ form.body }}></textarea>
     </div>
 
         <button type="submit">submit</button>

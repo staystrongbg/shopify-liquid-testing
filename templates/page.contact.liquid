@@ -8,18 +8,16 @@
     {{ form.errors | default_errors }}
 
     <div class="email">
-      <label for="email">Email</label>
-      <input type="email" name="contact[email]" id="email" />
+      <input type="email" name="contact[email]" placeholder="email"/>
     </div>
 
   
     <div class="message">
-      <label for="message">Message</label>
-      <textarea name="contact[body]" id="message"></textarea>
+      <textarea name="contact[body]"  placeholder="message"  ></textarea>
     </div>
   
     <div class="submit">
-      <input type="submit" value="Create" />
+      <input type="submit" value="Send" />
     </div>
   {% endform %}
   
